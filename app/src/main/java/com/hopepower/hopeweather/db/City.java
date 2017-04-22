@@ -2,19 +2,15 @@ package com.hopepower.hopeweather.db;
 
 import org.litepal.crud.DataSupport;
 
-/**
- * Created by 12531 on 2017/4/17.
- */
-
 public class City extends DataSupport {
 
     private int id;
 
-    private String cityName;//市的名字
+    private String cityName;
 
-    private int cityCode;//市的代号
+    private int cityCode;
 
-    private int provinceId;//所属省的Id
+    private int provinceId;
 
     public int getId() {
         return id;
@@ -47,4 +43,5 @@ public class City extends DataSupport {
     public void setProvinceId(int provinceId) {
         this.provinceId = provinceId;
     }
+
 }

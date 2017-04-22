@@ -2,17 +2,13 @@ package com.hopepower.hopeweather.db;
 
 import org.litepal.crud.DataSupport;
 
-/**
- * Created by 12531 on 2017/4/17.
- */
-
 public class Province extends DataSupport {
 
     private int id;
 
-    private String provinceName;//省的名字
+    private String provinceName;
 
-    private int provinceCode;//省的代号
+    private int provinceCode;
 
     public int getId() {
         return id;

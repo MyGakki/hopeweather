@@ -1,13 +1,13 @@
-<?xml version="1.0" encoding="UTF-8" ?>
-    <litepal>
+<?xml version="1.0" encoding="utf-8"?>
+<litepal>
 
     <dbname value="hope_weather" />
 
     <version value="1" />
 
     <list>
-        <mapping class ="com.hopeweather.android.db.Province" />
-        <mapping class ="com.hopeweather.android.db.City" />
-        <mapping class ="com.hopeweather.android.db.Country" />
+        <mapping class="com.hopepower.hopeweather.db.Province" />
+        <mapping class="com.hopepower.hopeweather.db.County" />
+        <mapping class="com.hopepower.hopeweather.db.City" />
     </list>
 </litepal>

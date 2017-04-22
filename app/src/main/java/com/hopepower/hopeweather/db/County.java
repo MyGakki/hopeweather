@@ -2,19 +2,15 @@ package com.hopepower.hopeweather.db;
 
 import org.litepal.crud.DataSupport;
 
-/**
- * Created by 12531 on 2017/4/17.
- */
-
-public class country extends DataSupport {
+public class County extends DataSupport {
 
     private int id;
 
-    private String countryName;//县的名字
+    private String countyName;
 
-    private String weatherId;//县对应的天气
+    private String weatherId;
 
-    private int cityId;//当前城市Id
+    private int cityId;
 
     public int getId() {
         return id;
@@ -24,12 +20,12 @@ public class country extends DataSupport {
         this.id = id;
     }
 
-    public String getCountryName() {
-        return countryName;
+    public String getCountyName() {
+        return countyName;
     }
 
-    public void setCountryName(String countryName) {
-        this.countryName = countryName;
+    public void setCountyName(String countyName) {
+        this.countyName = countyName;
     }
 
     public String getWeatherId() {
@@ -47,4 +43,5 @@ public class country extends DataSupport {
     public void setCityId(int cityId) {
         this.cityId = cityId;
     }
+
 }
