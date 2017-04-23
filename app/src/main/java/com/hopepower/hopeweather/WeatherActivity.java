@@ -1,5 +1,6 @@
 package com.hopepower.hopeweather;
 
+import android.content.Intent;
 import android.content.SharedPreferences;
 import android.graphics.Color;
 import android.os.Build;
@@ -21,6 +22,7 @@ import android.widget.Toast;
 import com.bumptech.glide.Glide;
 import com.hopepower.hopeweather.gson.Forecast;
 import com.hopepower.hopeweather.gson.Weather;
+import com.hopepower.hopeweather.service.AutoUpdateService;
 import com.hopepower.hopeweather.util.HttpUtil;
 import com.hopepower.hopeweather.util.Utility;
 
@@ -221,5 +223,7 @@ public class WeatherActivity extends AppCompatActivity {
         carWashText.setText(carWash);
         sportText.setText(sport);
         weatherLayout.setVisibility(View.VISIBLE);
+        Intent intent = new Intent(this, AutoUpdateService.class);
+        startActivity(intent);
     }
 }
