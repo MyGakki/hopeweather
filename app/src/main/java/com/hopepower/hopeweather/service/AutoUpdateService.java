@@ -20,6 +20,7 @@ import okhttp3.Callback;
 import okhttp3.Response;
 
 public class AutoUpdateService extends Service {
+
     @Override
     public IBinder onBind(Intent intent) {
         return null;
@@ -72,8 +73,8 @@ public class AutoUpdateService extends Service {
 
                 @Override
                 public void onResponse(Call call, Response response) throws IOException {
-                    final String responseText = response.body().string();
-                    final Weather weather = Utility.handleWeatherResponse(responseText);
+                    String responseText = response.body().string();
+                    Weather weather = Utility.handleWeatherResponse(responseText);
                     if (weather != null && "ok".equals(weather.status)) {
                         SharedPreferences.Editor editor = PreferenceManager.getDefaultSharedPreferences(AutoUpdateService.this).edit();
                         editor.putString("weather", responseText);
