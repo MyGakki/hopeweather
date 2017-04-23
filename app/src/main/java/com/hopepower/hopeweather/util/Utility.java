@@ -2,9 +2,11 @@ package com.hopepower.hopeweather.util;
 
 import android.text.TextUtils;
 
+import com.google.gson.Gson;
 import com.hopepower.hopeweather.db.City;
 import com.hopepower.hopeweather.db.County;
 import com.hopepower.hopeweather.db.Province;
+import com.hopepower.hopeweather.gson.Weather;
 
 import org.json.JSONArray;
 import org.json.JSONException;
@@ -78,5 +80,18 @@ public class Utility {
             }
         }
         return false;
+    }
+
+    public static Weather handleWeatherResponse(String response) {
+        try {
+            JSONObject jsonObject = new JSONObject(response);
+            JSONArray jsonArray = jsonObject.getJSONArray("HeWeather5");
+            String weatherContent = jsonArray.getJSONObject(0).toString();
+            Weather weather = new Gson().fromJson(weatherContent,Weather.class);
+            return weather;
+        } catch (Exception e) {
+            e.printStackTrace();
+        }
+        return null;
     }
 }
